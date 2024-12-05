@@ -1,61 +1,73 @@
-/* General styling */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 120px;
+    padding: 60px;
+    color: #665f59;
 }
 
 #CVContainer {
-    display: flex;
     margin: 0 auto;
     width: 80%;
     background-color: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding-bottom: 5%;
 }
-
-/* Left Side - Profile Info */
+#top{
+    text-align: center;
+    width: 96%;
+    margin: 0 2% 0 2%;
+   border-bottom: 1.5px solid #665f59;
+   
+}
+#resumeName{
+    margin: 0;
+    padding: 7% 0 7% 0;
+    font-size:xx-large;
+}
+#bottom{
+    display: flex;
+}
+#border{
+    height: 1.5px;
+    width: 96%;
+    background-color: #665f59;
+    margin: 0 2% 0 2%;
+}
+/* Left Side - Info */
 #leftSide {
-    background-color: rgb(25, 114, 186);
-    color: white;
+    background-color: #F8F8F8;
+    
     padding: 20px;
-    width: 35%;
-    text-align: center;
+    padding-top: 5px;
+    width: 40%;
+    
 }
 
-#profilePic {
-    width: 162px;
-    height: 162px;
-    margin-top: 10%;
-    border-radius: 50%;
-    margin-bottom: 20px;
+#leftSide section {
+    padding-left: 10px;
 }
-
-#leftSide h1 {
-    font-size: 24px;
-    margin: 10px 0;
-    text-align: center;
+.contact{
+    border-bottom: 1px dashed #665f59;
 }
-
 /* Right Side - Resume Content */
 #rightSide {
     padding: 20px;
+    padding-top: 5px;
     width: 65%;
 }
+.Profile,.experience, .skills{
+    border-bottom: 1px dashed #665f59;
+}
 
-h2 {
-    font-size: 22px;
-    color: #333;
+h2{
+    font-size: 20px;
+    color: #665f59;
     margin-bottom: 10px;
 }
 
-h3 {
-    font-size: 18px;
-    padding: 2%;
-    margin: 20px 0 10px;
-    color: black;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #100f0f;
+p{
+    font-size:11px;
 }
 
 ul {
@@ -66,6 +78,8 @@ ul {
 
 ul li {
     margin: 5px 0;
+    font-size: 11px;
+
 }
 
 /* Button Styling */
@@ -75,18 +89,37 @@ button {
     box-shadow: 0 0 15px black;
     cursor: pointer;
     margin-top: 10px;
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 17px;
+    padding: 10px 17px;
     background-color: #007bff;
     color: white;
     border: none;
+}
+#button{
+    margin-left: 90px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+/* Links Section */
+.links a {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
 /* Modal for Editing Resume */
+/* Modal Background */
+/* Modal Styling (Enhanced) */
+
+/* Modal Background */
 .modal {
     display: none;
     position: fixed;
@@ -94,43 +127,360 @@ button:hover {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(4px); 
 }
 
+
+/* Modal Content */
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
+    background-color: #ffffff;
+    margin: 5% auto; 
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+    max-height: 80vh; 
+    overflow-y: auto; 
 }
 
+/* Close Button */
 .close {
-    color: #aaa;
+    color: #555;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-/* Links Section */
-.links a {
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
+.close:hover {
+    color: #e74c3c;
+}
+
+/* Modal Heading */
+.modal-content h2 {
+    font-size: 24px;
     color: #007bff;
-    text-decoration: none;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
 }
 
-.links a:hover {
-    text-decoration: underline;
+/* Input Labels */
+.modal-content label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    color: #444;
+}
+
+/* Input Fields */
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Textarea */
+.modal-content textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Save Button */
+.modal-content #saveResumeBtn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content #saveResumeBtn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-content label {
+        font-size: 14px;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+        font-size: 13px;
+    }
+
+    .modal-content #saveResumeBtn {
+        font-size: 14px;
+    }
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media(min-width: 321px) and (max-width:426px){
+ body{
+    padding: 3px;
+    padding-top: 25px;
+ }
+ #CVContainer{
+    margin: 0 3vw;
+    width: 96%;
+ }
+ p, ul li, .links a{
+    font-size:7px;
+ }
+ h2{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+#resumeName{
+    font-size:28px;
+}
+
+#leftSide section {
+    padding-left: 0px;
+}
+button {
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 0 11px black;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 10px;
+    padding: 7px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none
+}
+#button{
+    margin-left: 12px;
+}
+}
+
+@media(max-width:320px){
+    body{
+        padding: 5px;
+        padding-top: 20px;
+     }
+     #CVContainer{
+        margin: 0 2vw;
+        width: 97%;
+     }
+     #leftSide {
+        padding: 8px;
+        padding-top: 3px;
+        width: 42%;
+    }
+    #rightSide {
+        padding: 8px;
+        padding-top: 3px;
+        width: 58%;
+    }
+    h2{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    p, ul li, .links a{
+        font-size:7px;
+    }
+ 
+    #resumeName{
+        font-size:25px;
+    }
+    #leftSide section {
+        padding-left: 0;
+    }
+    button {
+        font-family: Arial, sans-serif;
+        border-radius: 5px;
+        box-shadow: 0 0 10px black;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 9px;
+        padding: 7px 14px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+    #button{
+        margin-left: 10px;
+    }
+}
+@media(min-width:1025px) and (max-width:1720px){
+    body{
+        padding: 220px;
+        padding-top: 100px;
+     }
+     #CVContainer{
+        margin: 0 auto;
+        width: 96%;
+     }
+     #resumeName{
+        font-size:42px;
+    }
+    h2{
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+    
+    p, ul li, .links a{
+        font-size:15px;
+    }
+    
+}
+@media(min-width:1721px){
+    body{
+        padding: 500px;
+     }
+     #CVContainer{
+        margin: 0 auto;
+        width: 96%;
+     }
+     #resumeName{
+        font-size:80px;
+    }
+    h2{
+        font-size: 45px;
+        margin-bottom: 10px;
+    }
+    
+    p, ul li .links a{
+        font-size:30px;
+    }
+    
+}
+@media print{
+    #CVContainer {
+        font-family: Arial, sans-serif;
+        width: 100%;
+        background-color: white;
+        padding-bottom: 5%;
+    }
+    #top{
+        text-align: center;
+        width: 96%;
+        margin: 0 2% 0 2%;
+       border-bottom: 1.5px solid #665f59;
+       
+    }
+    #resumeName{
+        margin: 0;
+        padding: 7% 0 7% 0;
+        font-size:xx-large;
+    }
+    #bottom{
+        display: flex;
+    }
+    #border{
+        height: 1.5px;
+        width: 96%;
+        background-color: #665f59;
+        margin: 0 2% 0 2%;
+    }
+    /* Left Side - Info */
+    #leftSide {
+        background-color: #F8F8F8;
+        
+        padding: 20px;
+        padding-top: 5px;
+        width: 40%;
+        
+    }
+    
+    #leftSide section {
+        padding-left: 10px;
+    }
+    .contact{
+        border-bottom: 1px dashed #665f59;
+    }
+    /* Right Side - Resume Content */
+    #rightSide {
+        padding: 20px;
+        padding-top: 5px;
+        width: 60%;
+    }
+    .Profile,.experience, .skills{
+        border-bottom: 1px dashed #665f59;
+    }
+    
+    h2{
+        font-size: 20px;
+        color: #665f59;
+        margin-bottom: 10px;
+    }
+    
+    p{
+        font-size:11px;
+    }
+    
+    ul {
+        list-style-type: fill round;
+        padding: 10;
+        margin: 10px 0;
+    }
+    
+    ul li {
+        margin: 5px 0;
+        font-size: 11px;
+    
+    }
+    
+    /* Button Styling */
+    button {
+        display: none;
+    }
+
 }
